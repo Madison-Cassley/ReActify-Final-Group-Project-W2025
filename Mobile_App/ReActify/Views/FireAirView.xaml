@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:ReActify.ViewModels"            
+             x:Class="ReActify.Views.FireAirView"
+             x:DataType="viewmodels:FireAirViewModel"
+             BackgroundColor="#faeaea">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="30" VerticalOptions="Center" HorizontalOptions="Center">
+
+            <Button Text="← Back"
+                    Command="{Binding BackCommand}"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    FontSize="18"
+                    BorderWidth="0"
+                    HorizontalOptions="Start" />
+
+            <Label Text="Fire and Air Quality Status"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="#8B0000"
+                   HorizontalOptions="Center" />
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   HasShadow="True"
+                   Padding="25"
+                   WidthRequest="320"
+                   BorderColor="#f2aaaa">
+
+                <VerticalStackLayout Spacing="20">
+                    <Label Text="CO2 Level"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#a22b2b" />
+                    <Label Text="{Binding FireAirQualityModel.Co2level, StringFormat='{0} ppm'}"
+                           FontSize="22"
+                           TextColor="#c62828" />
+
+                    <Label Text="Air Quality"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#a22b2b" />
+                    <Label Text="{Binding FireAirQualityModel.AirQuality}"
+                           FontSize="22"
+                           TextColor="#c62828" />
+
+
+                    <Label Text="Smoke Probability"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#a22b2b" />
+                    <Label Text="{Binding FireAirQualityModel.SmokeProbability}"
+                           FontSize="22"
+                           TextColor="#c62828" />
+
+                    <Button Text="Toggle Fan" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:FireAirViewModel}}, Path=ToggleFanCommand}" />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

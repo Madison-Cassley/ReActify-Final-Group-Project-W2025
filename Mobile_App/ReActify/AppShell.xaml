@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ReActify.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ReActify"
+    xmlns:views="clr-namespace:ReActify.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="ReActify">
+
+    <!--<ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />-->
+
+    <!--<ShellContent Route="LoginPage"
+              ContentTemplate="{DataTemplate views:LoginPage}" />
+
+    <ShellContent Route="CreateAccountPage"
+              ContentTemplate="{DataTemplate views:CreateAccountPage}" />-->
+
+    <ShellContent Route="HomePage"
+               ContentTemplate="{DataTemplate views:HomePage}" />
+
+    <ShellContent Route="WaterFloodPage"
+                  ContentTemplate="{DataTemplate views:WaterFloodPage}" />
+
+    <ShellContent Route="EarthquakeView"
+              ContentTemplate="{DataTemplate views:EarthquakeView}" />
+
+    <ShellContent Route="FireAirView"
+                  ContentTemplate="{DataTemplate views:FireAirView}" />
+
+    <ShellContent Route="DashboardPage"
+              ContentTemplate="{DataTemplate views:DashboardPage}" />
+
+    <ShellContent Route="LoginPage"
+                  ContentTemplate="{DataTemplate views:LoginPage}" />
+
+    <ShellContent Route="CreateAccountPage"
+                  ContentTemplate="{DataTemplate views:CreateAccountPage}" />
+
+</Shell>

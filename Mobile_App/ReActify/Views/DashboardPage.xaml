@@ -1,0 +1,63 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ReActify.ViewModels"
+             x:Class="ReActify.Views.DashboardPage"
+             x:DataType="viewModels:DashboardViewModel"
+             Title="Dashboard"
+             BackgroundColor="#f8f9fa">
+    
+    <ContentPage.BindingContext>
+        <viewModels:DashboardViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <Grid>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <VerticalStackLayout Grid.Column="1"
+                                 Padding="25"
+                                 Spacing="25"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="Center">
+                <Label Text="{Binding Username, StringFormat='Hello {0}'}"
+                       FontSize="22"
+                       HorizontalOptions="Center" />
+
+                <Frame BorderColor="#ffcccc"
+                       CornerRadius="18"
+                       BackgroundColor="White"
+                       Padding="15"
+                       WidthRequest="280">
+                    <VerticalStackLayout>
+                        <Label Text="Danger Levels" FontSize="18" FontAttributes="Bold" />
+                        <Label Text="{Binding FireDanger, StringFormat='Fire: {0}'}" TextColor="#cc3300"/>
+                        <Label Text="{Binding EarthquakeDanger, StringFormat='Earthquakes: {0}'}" TextColor="#ff9900"/>
+                        <Label Text="{Binding FloodDanger, StringFormat='Flood: {0}'}" TextColor="#0066cc"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame BorderColor="#ccccff"
+                       CornerRadius="18"
+                       BackgroundColor="White"
+                       Padding="15"
+                       WidthRequest="280">
+                    <VerticalStackLayout>
+                        <Label Text="Quick Stats" FontSize="18" FontAttributes="Bold" />
+                        <Label Text="{Binding IncidentsToday, StringFormat='Incidents Today: {0}'}" />
+                        <Label Text="{Binding InProgress, StringFormat='In Progress: {0}'}" />
+                        <Label Text="{Binding AvgResponseTime, StringFormat='Avg Response Time: {0}'}" />
+                        <Label Text="{Binding LastUpdated, StringFormat='Last Updated: {0}'}" />
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

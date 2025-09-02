@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ReActify.ViewModels"
+             x:Class="ReActify.Views.WaterFloodPage"
+             x:DataType="viewModels:WaterFloodViewModel"
+             BackgroundColor="#eef5fb">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30"
+                             Spacing="30"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center">
+
+            <!--Back & Title-->
+            <Button Text="← Back"
+                    Command="{Binding BackCommand}"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    FontSize="18"
+                    BorderWidth="0"
+                    HorizontalOptions="Start" />
+
+            <Label Text="Water Flood Status"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="#004a80"
+                   HorizontalOptions="Center" />
+
+            <!--DANGER banner-->
+            <Label Text="DANGER"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="Red"
+                   IsVisible="{Binding IsDanger}"
+                   HorizontalOptions="Center" />
+
+            <!--Sensor Readings Frame-->
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   HasShadow="True"
+                   Padding="25"
+                   WidthRequest="320"
+                   BorderColor="#a5c9f1">
+                <VerticalStackLayout Spacing="20">
+                    <Label Text="Water Level (cm)"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#005b96" />
+                    <Label Text="{Binding WaterFloods.WaterLevel, StringFormat='{0} cm'}"
+                           FontSize="22"
+                           TextColor="#007acc" />
+
+                    <Label Text="Moisture (%)"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#005b96" />
+                    <Label Text="{Binding WaterFloods.MoistureLevels, StringFormat='{0} %'}"
+                           FontSize="22"
+                           TextColor="#007acc" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!--Actuator Controls Frame-->
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   HasShadow="True"
+                   Padding="25"
+                   WidthRequest="320"
+                   BorderColor="#a5c9f1">
+                <VerticalStackLayout Spacing="20">
+                    <!--Servo buttons-->
+                    <HorizontalStackLayout Spacing="10">
+                        <Button Text="Close Drain"
+                                Command="{Binding OpenServoCommand}"
+                                BackgroundColor="#007acc"
+                                TextColor="White"
+                                CornerRadius="8"
+                                HeightRequest="44"
+                                HorizontalOptions="FillAndExpand" />
+
+                        <Button Text="Open Drain"
+                                Command="{Binding CloseServoCommand}"
+                                BackgroundColor="#007acc"
+                                TextColor="White"
+                                CornerRadius="8"
+                                HeightRequest="44"
+                                HorizontalOptions="FillAndExpand" />
+                    </HorizontalStackLayout>
+
+                    <!--Single buzzer button-->
+                    <Button Text="Toggle 3 second buzzer"
+                            Command="{Binding BuzzerCommand}"
+                            BackgroundColor="#007acc"
+                            TextColor="White"
+                            CornerRadius="8"
+                            HeightRequest="44"
+                            HorizontalOptions="FillAndExpand" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

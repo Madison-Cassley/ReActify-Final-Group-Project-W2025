@@ -1,0 +1,35 @@
+[project]
+name = "final-project-reactify"
+version = "0.1.0"
+description = "Project repository for W25 Connected Objects final project."
+authors = [
+    {name = "Alexander006", email = "2162243@johnabbottcollege.net"},
+]
+dependencies = [
+    "gpiozero",
+    "lgpio",
+    "asyncmock",
+    "gpiod",
+    "dotenv",
+    "sshkeyboard",
+    "rpi_ws281x adafruit-circuitpython-neopixel",
+    "--force-reinstall adafruit-blinka",
+    "grove.py @ git+https://github.com/Seeed-Studio/grove.py",
+    "Seeed_Python_RPi @ git+https://github.com/Seeed-Studio/Seeed_Python_RPi.git",
+    "Seeed_Python_SGP30 @ git+https://github.com/Seeed-Studio/Seeed_Python_SGP30.git"]
+requires-python = ">=3.11"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+
+# You can make up your own categories: here, I have made "test", "lint", and "dev" categories.
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
+lint = [
+    "ruff"
+]
+dev = [
+    # Note that the name of the project (sample-python-project) must match exactly for this syntax to work.
+    "sample-python-project[test,lint]",
+]

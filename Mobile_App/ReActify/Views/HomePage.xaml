@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ReActify.ViewModels"
+             x:Class="ReActify.Views.HomePage"
+             x:DataType="viewModels:HomeViewModel"
+             BackgroundColor="#f2f2f2">
+    
+    <Grid RowDefinitions="Auto,*">
+
+        <Grid BackgroundColor="White" Padding="10" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Text="☰"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    FontSize="24"
+                    BorderWidth="0"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Grid.Column="0" />
+
+            <Image Source="logo.png"
+                   HeightRequest="40"
+                   WidthRequest="40"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   Grid.Column="2" />
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Spacing="20" Padding="30">
+            <Button Text="Go to Water Floods"
+                    Command="{Binding GoToWaterFloodsCommand}"
+                    WidthRequest="220"
+                    BackgroundColor="#0073e6"
+                    TextColor="White"
+                    CornerRadius="12" />
+
+            <Button Text="Go to Earthquake Subsystem"
+                    Command="{Binding GoToEarthquakeCommand}"
+                    WidthRequest="220"
+                    BackgroundColor="#00A86B"
+                    TextColor="White"
+                    CornerRadius="12" />
+
+            <Button Text="Go to Fire and Air Quality"
+                    Command="{Binding GoToFireCommand}"
+                    WidthRequest="220"
+                    BackgroundColor="#FF0080"
+                    TextColor="White"
+                    CornerRadius="12" />
+
+            <Button x:Name="ResponderButton"
+                    Text="Go to Responder Dashboard"
+                    Command="{Binding GoToDashboardCommand}"
+                    WidthRequest="220"
+                    BackgroundColor="#ff6600"
+                    TextColor="White"
+                    CornerRadius="12"
+                    IsVisible="False" />
+
+            <Button Text="Logout"
+                    Command="{Binding LogoutCommand}"
+                    WidthRequest="220"
+                    BackgroundColor="#444"
+                    TextColor="White"
+                    CornerRadius="12"
+                    Padding="10" />
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

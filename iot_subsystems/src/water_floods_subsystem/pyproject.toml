@@ -1,0 +1,28 @@
+[project]
+name = "water-floods-subsystem"
+version = "0.1.0"
+description = "ReTerminal‐based water & soil monitoring subsystem"
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = [
+  "git+https://github.com/Seeed-Studio/grove.py",
+  "git+https://github.com/Seeed-Studio/Seeed_Python_RPi.git",
+  "pytest",
+  "pytest-asyncio",
+  "pytest-mock",
+  "asyncmock",
+  "logot[pytest]", 
+  "ruff",
+  "grove",
+  "gpiozero",
+  "RPi-GPIO",
+  "seeed-python-reterminal",
+  "sshkeyboard",
+  "python-dotenv",
+  "dotenv",
+  "azure-iot-device",
+]
+
+[tool.ruff]
+line-length = 120

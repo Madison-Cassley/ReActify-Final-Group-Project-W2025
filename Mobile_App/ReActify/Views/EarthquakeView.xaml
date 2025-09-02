@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:ReActify.ViewModels"
+             x:Class="ReActify.Views.EarthquakeView"
+             x:DataType="viewmodels:EarthquakeViewModel"
+             BackgroundColor="#eaf4ee">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="30" VerticalOptions="Center" HorizontalOptions="Center">
+
+            <Button Text="← Back"
+                    Command="{Binding BackCommand}"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    FontSize="18"
+                    BorderWidth="0"
+                    HorizontalOptions="Start" />
+
+            <Label Text="Earthquake Status"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="#2E473B"
+                   HorizontalOptions="Center" />
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="18"
+                   HasShadow="True"
+                   Padding="25"
+                   WidthRequest="320"
+                   BorderColor="#B8D8C4">
+
+                <VerticalStackLayout Spacing="20">
+
+                    <Label Text="Sudden Movement Detected"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#3A5743" />
+                    <Label Text="{Binding Earthquake.MovementStatus}"
+                           FontSize="22"
+                           TextColor="#2F6E4C" />
+
+                    <Label Text="Sound Level"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#3A5743" />
+                    <Label Text="{Binding Earthquake.SoundLevel}"
+                           FontSize="22"
+                           TextColor="#2F6E4C" />
+
+                    <Label Text="Emergency Status"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#3A5743" />
+                    <Label Text="{Binding Earthquake.EmergencyMessage}"
+                           FontSize="22"
+                           TextColor="#C62828"
+                           FontAttributes="Bold"
+                           IsVisible="{Binding Earthquake.ShowToggle}" />
+
+                    <Button Text="Toggle Emergency Light"
+                            Command="{Binding ToggleEmergencyCommand}"
+                            BackgroundColor="#ED6A5A"
+                            TextColor="White"
+                            CornerRadius="12"
+                            Padding="10"
+                            HorizontalOptions="Center"
+                            IsVisible="{Binding Earthquake.ShowToggle}" />
+
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

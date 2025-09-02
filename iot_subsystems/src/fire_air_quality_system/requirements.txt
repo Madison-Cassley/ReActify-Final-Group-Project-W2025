@@ -1,0 +1,14 @@
+pytest
+pytest-asyncio
+pytest-mock
+logot[pytest]
+gpiozero
+lgpio
+asyncmock
+gpiod
+dotenv
+sshkeyboard
+azure-iot-device
+git+https://github.com/Seeed-Studio/grove.py
+git+https://github.com/Seeed-Studio/Seeed_Python_RPi.git
+git+https://github.com/Seeed-Studio/Seeed_Python_SGP30.git

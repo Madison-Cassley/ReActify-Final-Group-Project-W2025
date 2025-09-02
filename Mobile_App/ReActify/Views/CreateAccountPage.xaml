@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ReActify.ViewModels"
+             x:Class="ReActify.Views.CreateAccountPage"
+             x:DataType="viewModels:CreateAccountViewModel"
+             Title="Create Account">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+            
+            <!--back button TODO: GET ACTUAL BACK ARROW IMAGE FOR IMAGE BUTTON--> 
+            <Button Text="← Back" 
+                    Command="{Binding BackToLoginCommand}"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    FontSize="18"
+                    HorizontalOptions="Start"
+                    BorderWidth="0" />
+
+            <!--logo-->
+            <Image Source="logo.png"
+                   HeightRequest="80"
+                   HorizontalOptions="Center" />
+            <!--instruction -->
+            <Label Text="Create a New Account" 
+                   HorizontalOptions="Center"
+                   FontSize="18"
+                   FontAttributes="Bold"/>
+            <!--username -->
+            <Entry Placeholder="Username" Text="{Binding NewUsername}" />
+            <!--password -->
+            <Entry Placeholder="Password" IsPassword="True" Text="{Binding NewPassword}" />
+            <!--create account button-->
+            <Button Text="Create Account"
+                    Command="{Binding CreateAccountCommand}"
+                    BackgroundColor="#FF0080"
+                    TextColor="Black" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

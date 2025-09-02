@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ReActify.ViewModels"
+             x:Class="ReActify.Views.LoginPage"
+             x:DataType="viewModels:LoginViewModel"
+             Title="Login">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+            <!--logo-->
+            <Image Source="logo.png"
+                   HeightRequest="80"
+                   HorizontalOptions="Center" />
+            
+            <!--welcome header-->
+            <Label Text="Welcome to ReActify" 
+                   HorizontalOptions="Center"
+                   FontSize="22"
+                   FontAttributes="Bold"/>
+            
+            <!--usernajme-->
+            <Entry Placeholder="Username" Text="{Binding Username}" />
+            
+            <!--password-->
+            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" />
+            
+            <!--optional security code-->
+            <Entry Placeholder="Security Code (Optional)" Text="{Binding SecurityCode}" />
+            
+            <!--login button-->
+            <Button Text="Login"
+                    Command="{Binding LoginCommand}"
+                    BackgroundColor="#FF0080"
+                    TextColor="Black" />
+            
+            <!--create account button-->
+            <Button Text="Create Account"
+                    Command="{Binding CreateAccountCommand}"
+                    BackgroundColor="Transparent"
+                    TextColor="#FF0080"
+                    BorderColor="#FF0080"
+                    BorderWidth="1" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
