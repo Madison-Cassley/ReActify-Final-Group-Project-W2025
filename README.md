@@ -16,6 +16,9 @@
 - Rania Mustafa
 - Madison Cassley
 
+## Important Notes
+appsettings.json removed in order to protect keys, app will not give data without ReTerminal connections, this is simply a code showcase
+
 ## Project description
 This project focuses on creating and delivering an application that will alert the user should there be an environmental hazard. It addresses issues ranging from floods, earthquakes and even fire detection. Looking at weather predictions can definitely provide useful information to ensure people take proper action for safety. However, with our application, this eases the need for constant searching, as our users have access to the current data the sensors send to our dedicated cloud platform, Azure. This permits the user to assess the environmental situation appropriately and act. 
 
